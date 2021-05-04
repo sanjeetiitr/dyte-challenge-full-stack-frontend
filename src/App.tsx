@@ -14,7 +14,7 @@ const App: React.FC<{}> = () => {
     setSelectedTheme(theme);
   }, [themeName]);
 
-  console.log(selectedTheme, themeName);
+  console.log(selectedTheme, themeName, "MAIN PAGE ");
 
   return (
     <Suspense fallback={<div> Loading </div>}>

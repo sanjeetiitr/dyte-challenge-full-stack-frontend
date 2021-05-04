@@ -65,7 +65,7 @@ const Component: React.FC<Props> = ({ responseData, loading }) => {
           <span
             style={{
               color: `${
-                statusColor === "#FFF" ? theme?.colors?.tn : statusColor
+                statusColor === "#FFF" ? theme.colors.tn : statusColor
               }`,
             }}
           >
