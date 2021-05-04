@@ -30,6 +30,8 @@ export const RightLayoutWrapper = styled.div`
       padding: 16px;
       cursor: pointer;
       border-bottom: 1px dashed ${({ theme }) => theme.colors.bg_d};
+      -webkit-animation: fadeIn 1s;
+      animation: fadeIn 1s;
 
       .first-sec {
         display: flex;
@@ -43,7 +45,25 @@ export const RightLayoutWrapper = styled.div`
         color: ${({ theme }) => theme.colors.tn};
         font-size: 14px;
         padding-top: 8px;
+        overflow-wrap: break-word;
       }
+    }
+  }
+
+  @-webkit-keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
     }
   }
 `;

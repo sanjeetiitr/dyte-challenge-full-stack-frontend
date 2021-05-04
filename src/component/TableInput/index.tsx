@@ -1,7 +1,5 @@
-import React, { useCallback, useEffect, useState } from "react";
-import AddIcon from "../../svgComponent/addIcon";
+import React, { useEffect, useState } from "react";
 import DeleteIcon from "../../svgComponent/deleteIcon";
-import { debounce } from "../../utils";
 import { InputElement, TableInputWrapper } from "./styles";
 
 export interface CellData {

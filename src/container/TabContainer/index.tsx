@@ -14,7 +14,6 @@ import {
   UrlInputElement,
 } from "./styles";
 import { TabsProperties } from "../LeftLayout";
-import { useLocalStorage } from "../../hooks/useLocalStorage";
 
 export interface TabContainerData {
   method?: string;
@@ -34,17 +33,14 @@ type DataOptions = {
 interface Props {
   selectedTabData: TabsProperties;
   updateSelectedTabs: (type: string, value: any) => void;
+  setHistory: any;
 }
 
 const Component: React.FC<Props> = ({
   selectedTabData,
   updateSelectedTabs,
+  setHistory,
 }) => {
-  // const [data, setData] = useState<TabContainerData>(selectedTabData?.data);
-  // const [responseData, updateSelectedTabs] = useState<any | undefined>(
-  //   undefined
-  // );
-  const [history, setHistory] = useLocalStorage<any[]>("history", []);
   const [checked, setChecked] = useState<boolean>(false);
   const [loading, setLoading] = useState<boolean>(false);
 
@@ -130,13 +126,14 @@ const Component: React.FC<Props> = ({
       }
     }
 
-    console.log(callOpts, selectedTabData.data, "raw_input_ace");
+    // console.log(callOpts, selectedTabData.data, "raw_input_ace");
     // http://localhost:4000
     // axios({ ...callOpts }).then((res) => {
     //   updateSelectedTabs(res);
     //   console.log(res);
     // });
 
+    // for determing the response time
     axios.interceptors.request.use((x: any) => {
       x.meta = x.meta || {};
       x.meta.requestStartedAt = new Date().getTime();
@@ -156,6 +153,7 @@ const Component: React.FC<Props> = ({
       }
     );
 
+    // send request call
     axios
       .post("https://dyte-challenge-full-stack-back.herokuapp.com", {
         data: callOpts,
@@ -216,13 +214,10 @@ const Component: React.FC<Props> = ({
   };
 
   const handleDataUpdate = (key: string, value: any) => {
-    // setData({ ...data, [key]: value });
-    console.log(selectedTabData.data, key, value, "data updae");
     updateSelectedTabs("data", { ...selectedTabData.data, [key]: value });
   };
 
   const handleContentTypeUpdate = (key: string, value: any) => {
-    // setData({ ...data, [key]: value });
     updateSelectedTabs("data", { ...selectedTabData.data, [key]: value });
   };
 

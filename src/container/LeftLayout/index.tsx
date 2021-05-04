@@ -25,7 +25,7 @@ const tabData = [
   },
 ];
 
-export const LeftLayout: React.FC<{}> = () => {
+export const LeftLayout: React.FC<{ setHistory: any }> = ({ setHistory }) => {
   const [tabs, setTabs] = useState<TabsProperties[]>([...tabData]);
   const [selectedTab, setSelectedTabs] = useState<number>(0);
 
@@ -106,6 +106,7 @@ export const LeftLayout: React.FC<{}> = () => {
       {tabs.length > 0 && (
         <div className="tab-body">
           <TabContainer
+            setHistory={setHistory}
             selectedTabData={selectedTabData}
             updateSelectedTabs={handleSelectedTabDataUpdate}
           />
