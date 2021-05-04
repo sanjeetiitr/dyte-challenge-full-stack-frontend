@@ -1,0 +1,46 @@
+{
+  "data": {
+    "light": {
+      "id": "T_001",
+      "name": "light",
+      "colors": {
+        "bg_ddd": "#ffffff",
+        "bg_dd": "rgba(0,0,0,0.2)",
+        "bg_d": "hsla(0,0%,100%,0.04)",
+        "tn": "hsla(0,0%,100%,0.5)",
+        "th": "hsla(0,0%,100%,0.05)",
+        "ts": "hsla(0,0%,100%,0.9)",
+        "tab_uns": "rgba(0,0,0,0.1)",
+        "button": {
+          "text": "#FFFFFF",
+          "background": "#000000"
+        },
+        "link": {
+          "text": "teal",
+          "opacity": 1
+        }
+      }
+    },
+    "dark": {
+      "id": "T_007",
+      "name": "dark",
+      "colors": {
+        "bg_ddd": "#202124",
+        "bg_dd": "rgba(0,0,0,0.2)",
+        "bg_d": "hsla(0,0%,100%,0.04)",
+        "tn": "hsla(0,0%,100%,0.5)",
+        "th": "hsla(0,0%,100%,0.05)",
+        "ts": "hsla(0,0%,100%,0.9)",
+        "tab_uns": "rgba(0,0,0,0.09)",
+        "button": {
+          "text": "#ffffff",
+          "background": "#0d47a1"
+        },
+        "link": {
+          "text": "#0d47a1",
+          "opacity": 0.8
+        }
+      }
+    }
+  }
+}
