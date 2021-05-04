@@ -21,6 +21,11 @@ export const RightLayout: React.FC<{ history: any[] }> = ({ history }) => {
             </div>
           );
         })}
+        {history.length === 0 && (
+          <div className="card-container">
+            <div className="second-sec-url">No history records found</div>
+          </div>
+        )}
       </div>
     </RightLayoutWrapper>
   );
