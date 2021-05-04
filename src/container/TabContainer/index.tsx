@@ -117,13 +117,20 @@ const Component: React.FC<Props> = ({
       callOpts["data"] = selectedTabData?.data.raw_data;
     }
     if (
-      selectedTabData?.data.method !== "GET" &&
-      selectedTabData?.data.content_type
+      selectedTabData.data &&
+      selectedTabData.data.method !== "GET" &&
+      selectedTabData.data.content_type
     ) {
-      callOpts["headers"]["Content-Type"] = selectedTabData?.data.content_type;
+      if (callOpts.hasOwnProperty("headers")) {
+        callOpts["headers"]["Content-Type"] = selectedTabData.data.content_type;
+      } else {
+        callOpts["headers"] = {
+          "Content-Type": selectedTabData.data.content_type,
+        };
+      }
     }
 
-    console.log(callOpts, selectedTabData?.data, "raw_input_ace");
+    console.log(callOpts, selectedTabData.data, "raw_input_ace");
     // http://localhost:4000
     // axios({ ...callOpts }).then((res) => {
     //   updateSelectedTabs(res);
