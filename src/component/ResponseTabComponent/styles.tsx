@@ -20,6 +20,7 @@ export const ResponseTabComponentWrapper = styled.div`
     border-radius: 0.4rem;
     li {
       padding: 6px 0;
+      overflow-wrap: anywhere;
     }
     min-height: 100px;
   }
