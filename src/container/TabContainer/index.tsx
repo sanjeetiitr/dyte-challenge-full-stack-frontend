@@ -5,7 +5,6 @@ import { ParamsComponent } from "../../component/ParamComponent";
 import { ResponseComponent } from "../../component/ResponseComponent";
 import { CellData, TableInputMemoized } from "../../component/TableInput";
 import LoadingBar from "react-top-loading-bar";
-import { writeStorage } from "@rehooks/local-storage";
 
 import {
   ContentTypeInput,
@@ -15,6 +14,7 @@ import {
   UrlInputElement,
 } from "./styles";
 import { TabsProperties } from "../LeftLayout";
+import { useLocalStorage } from "../../hooks/useLocalStorage";
 
 export interface TabContainerData {
   method?: string;
@@ -44,6 +44,7 @@ const Component: React.FC<Props> = ({
   // const [responseData, updateSelectedTabs] = useState<any | undefined>(
   //   undefined
   // );
+  const [history, setHistory] = useLocalStorage<any[]>("history", []);
   const [checked, setChecked] = useState<boolean>(false);
   const [loading, setLoading] = useState<boolean>(false);
 
@@ -149,7 +150,9 @@ const Component: React.FC<Props> = ({
     );
 
     axios
-      .post("http://localhost:4000", { data: callOpts })
+      .post("https://dyte-challenge-full-stack-back.herokuapp.com", {
+        data: callOpts,
+      })
       .then((res: any) => {
         console.log(res, "res");
         if (res.data.isSuccess) {
@@ -199,9 +202,9 @@ const Component: React.FC<Props> = ({
     if (initData) {
       let parsedData = JSON.parse(initData);
       parsedData.push(data);
-      writeStorage("history", parsedData);
+      setHistory(parsedData);
     } else {
-      writeStorage("history", [data]);
+      setHistory([data]);
     }
   };
 
