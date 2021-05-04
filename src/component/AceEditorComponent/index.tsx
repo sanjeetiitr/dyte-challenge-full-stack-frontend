@@ -45,8 +45,6 @@ const Component: React.FC<Props> = ({
     }
   };
 
-  console.log(value, "value ace ");
-
   return (
     <AceEditorComponentWrapper>
       <AceEditor
@@ -69,12 +67,6 @@ const Component: React.FC<Props> = ({
 };
 
 const areEqual = (prevProps: any, nextProps: any) => {
-  console.log(
-    prevProps.value,
-    nextProps.value,
-    prevProps.value === nextProps.value,
-    "nextProps ace"
-  );
   if (JSON.stringify(prevProps.value) !== JSON.stringify(nextProps.value)) {
     return false;
   } else {

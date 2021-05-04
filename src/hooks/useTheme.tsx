@@ -15,13 +15,13 @@ export const useTheme = (): useThemeType => {
   const [themeLoaded, setThemeLoaded] = useState(false);
 
   const setThemeMode = (type: string): void => {
-    console.log(type, "useTheme");
+    // console.log(type, "useTheme");
     let theme = type === "light" ? themes.data.light : themes.data.dark;
     setTheme(theme);
     setThemeName(theme.name);
   };
 
-  console.log(theme, themeLoaded, "theme");
+  // console.log(theme, themeLoaded, "theme");
 
   return { theme, themeLoaded, themeName, setThemeMode };
 };

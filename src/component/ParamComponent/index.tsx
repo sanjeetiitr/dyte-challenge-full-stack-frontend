@@ -15,7 +15,6 @@ interface Props {
 
 const Component: React.FC<Props> = ({ updatedData, data }) => {
   const [selectedTab, setSelectedTab] = useState(TabTypes.parameters);
-  console.log(data, "dasdas ParamsComponent ");
   return (
     <ParamsComponentWrapper>
       <div className="type-selection-wrapper">

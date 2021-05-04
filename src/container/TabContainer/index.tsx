@@ -126,13 +126,6 @@ const Component: React.FC<Props> = ({
       }
     }
 
-    // console.log(callOpts, selectedTabData.data, "raw_input_ace");
-    // http://localhost:4000
-    // axios({ ...callOpts }).then((res) => {
-    //   updateSelectedTabs(res);
-    //   console.log(res);
-    // });
-
     // for determing the response time
     axios.interceptors.request.use((x: any) => {
       x.meta = x.meta || {};
@@ -159,7 +152,6 @@ const Component: React.FC<Props> = ({
         data: callOpts,
       })
       .then((res: any) => {
-        console.log(res, "res");
         if (res.data.isSuccess) {
           updateSelectedTabs("response", {
             ...res.data.data,
@@ -220,8 +212,6 @@ const Component: React.FC<Props> = ({
   const handleContentTypeUpdate = (key: string, value: any) => {
     updateSelectedTabs("data", { ...selectedTabData.data, [key]: value });
   };
-
-  console.log(selectedTabData, "tabs @@@ ");
 
   return (
     <TabContainerWrapper>

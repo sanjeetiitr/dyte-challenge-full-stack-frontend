@@ -54,7 +54,6 @@ const TableInput: React.FC<Props> = ({
     let initData = cellData;
     initData[key]["cell_1"] = value;
     setCellData([...initData]);
-    console.log(dataKey, initData);
     updatedData(dataKey, initData);
   };
 
@@ -64,8 +63,6 @@ const TableInput: React.FC<Props> = ({
     setCellData([...initData]);
     updatedData(dataKey, initData);
   };
-
-  console.log(cellData, data, "dasdas");
 
   let cellCount = cellData.length;
 
@@ -112,7 +109,6 @@ const TableInput: React.FC<Props> = ({
 };
 
 const areEqual = (prevProps: any, nextProps: any) => {
-  console.log(prevProps, nextProps, "nextProps");
   if (JSON.stringify(prevProps.data) === JSON.stringify(nextProps.data)) {
     return true;
   } else if (

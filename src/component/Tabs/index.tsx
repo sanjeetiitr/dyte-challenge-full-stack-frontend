@@ -15,7 +15,6 @@ const Component: React.FC<Props> = ({
   tabData,
   onTabClick,
 }) => {
-  console.log(uniqueKey, "key");
   return (
     <TabWrapper
       key={uniqueKey}

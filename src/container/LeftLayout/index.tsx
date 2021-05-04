@@ -71,7 +71,6 @@ export const LeftLayout: React.FC<{ setHistory: any }> = ({ setHistory }) => {
         el.selected = false;
       }
     });
-    console.log(key, "key");
     setSelectedTabs(key);
     setTabs([...initTabs]);
   };
@@ -82,8 +81,6 @@ export const LeftLayout: React.FC<{ setHistory: any }> = ({ setHistory }) => {
     initTabs[selectedTab] = { ...temp, [type]: value };
     setTabs([...initTabs]);
   };
-
-  console.log(tabs, selectedTab, "tabs");
   let selectedTabData = tabs[selectedTab];
 
   return (
