@@ -12,9 +12,9 @@ export const MainHeaderComponent: React.FC<{}> = () => {
         <ThemeIcon
           height="26px"
           width="26px"
-          onClick={() =>
-            setThemeMode(theme.name === "light" ? "dark" : "light")
-          }
+          // onClick={() =>
+          //   // setThemeMode(theme.name === "light" ? "dark" : "light")
+          // }
         />
       </div>
     </MainHeaderComponentWrapper>
